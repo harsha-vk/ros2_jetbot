@@ -24,7 +24,7 @@ void deserialize(const uint8_t *buffer)
     float value;
     memcpy(&value, buffer + 3, sizeof(value));
 
-    loadData(buffer[2], value);
+    loadData((DC_Configuration_e)buffer[2], value);
 }
 
 void loadData(DC_Configuration_e config, float value)

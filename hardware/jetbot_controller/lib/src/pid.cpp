@@ -26,7 +26,7 @@ PID::PID(double *Input, double *Output, double *Setpoint,
     PID::SetControllerDirection(ControllerDirection);
     PID::SetTunings(Kp, Ki, Kd, POn);
 
-    lastTime = (time_us_32() / 1000) - SampleTime;
+    lastTime = time_us_32() - SampleTime;
 }
 
 /*Constructor (...)*********************************************************
@@ -52,7 +52,7 @@ bool PID::Compute()
     {
         return false;
     }
-    unsigned long now = (time_us_32() / 1000);
+    unsigned long now = time_us_32();
     unsigned long timeChange = (now - lastTime);
     if (timeChange >= SampleTime)
     {

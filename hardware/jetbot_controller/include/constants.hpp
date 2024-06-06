@@ -30,7 +30,7 @@
 #define RIGHT_KI            3.8
 #define RIGHT_KP            1.9
 
-#define SAMPLE_TIME_ms      10
+#define SAMPLE_TIME_us      10000
 
 #define PULSE_PER_ROTATION  134.4
 #define PERIOD_s            0.2

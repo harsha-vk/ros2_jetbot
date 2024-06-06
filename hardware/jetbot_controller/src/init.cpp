@@ -69,12 +69,12 @@ void initializeSystem()
 
     pidLeft = PID(&rpmLeft, &pulseLeft, &setRpmLeft, kpLeft, kiLeft, kdLeft, DIRECT);
     pidLeft.SetMode(AUTOMATIC);
-    pidLeft.SetSampleTime(SAMPLE_TIME_ms);
+    pidLeft.SetSampleTime(SAMPLE_TIME_us);
     pidLeft.SetOutputLimits(((-1) * PWM_TOP), PWM_TOP);
 
     pidRight = PID(&rpmRight, &pulseRight, &setRpmRight, kpRight, kiRight, kdRight, DIRECT);
     pidRight.SetMode(AUTOMATIC);
-    pidRight.SetSampleTime(SAMPLE_TIME_ms);
+    pidRight.SetSampleTime(SAMPLE_TIME_us);
     pidRight.SetOutputLimits(((-1) * PWM_TOP), PWM_TOP);
 
     tmrMeasureTimer = TMR_MEASURE_CNT;
